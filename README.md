@@ -1,1 +1,1 @@
-# multithreading_using_threadpool
+# image inverter using multithreading

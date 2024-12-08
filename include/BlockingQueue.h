@@ -1,0 +1,4 @@
+class BlockingQueue {
+   public:
+    BlockingQueue();
+};

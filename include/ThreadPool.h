@@ -1,4 +1,0 @@
-class ThreadPool {
-   public:
-    ThreadPool();
-};
