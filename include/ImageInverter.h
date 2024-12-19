@@ -25,7 +25,7 @@ class ImageInverter {
 
    public:
     ImageInverter(int blockSize, int consumerNumber);
-    ~ImageInverter();
+    ~ImageInverter() = default;
     void invert(const cv::Mat& imageToProcess, cv::Mat& resultImage);
 };
 
