@@ -29,14 +29,14 @@ int main() {
     std::chrono::time_point<std::chrono::system_clock> start, end;
 
     for (const std::string& path : pathsToImages) {
-        start = std::chrono::system_clock::now();
-
         // Загрузка изображения
         inputImage = cv::imread(path);
         if (inputImage.empty()) {
             std::cerr << "Failed to load image!" << std::endl;
             return -1;
         }
+
+        start = std::chrono::system_clock::now();
 
         // Инвертирование цветов
         naive_invertImage(inputImage, invertedImage);

@@ -10,7 +10,7 @@
 #include "ImageInverter.h"
 
 #define BLOCK_SIZE 100
-#define CONSUMER_THREAD_NUM 4
+#define CONSUMER_THREAD_NUM 6
 #define FILE_PATH_RESULT "../benchmarking_outputs/multithread.txt"
 
 int main() {
@@ -32,14 +32,14 @@ int main() {
     std::chrono::time_point<std::chrono::system_clock> start, end;
 
     for (const std::string& path : pathsToImages) {
-        start = std::chrono::system_clock::now();
-
         // Загрузка изображения
         inputImage = cv::imread(path);
         if (inputImage.empty()) {
             std::cerr << "Failed to load image!" << std::endl;
             return -1;
         }
+
+        start = std::chrono::system_clock::now();
 
         // Инвертирование цветов
         imageInverter.invert(inputImage, invertedImage);
